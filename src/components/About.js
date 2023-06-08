@@ -11,7 +11,9 @@ function About() {
                 While our menu is tried-and-true, we're always open to suggestions! 
                 Please feel free to submit a new dish using the form on the Menu page.
                 <br />
+                <br />
                 <em>We can't get you to paradise, we can take your taste buds there.</em>
+                <br />
                 <br />
                 Hope to see you soon!
             </p>
