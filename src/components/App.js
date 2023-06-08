@@ -45,21 +45,11 @@ function App() {
       <title>Garden of Eatin</title>
       <NavBar />
       <Routes>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/menu">
-          <Menu />
-        </Route>
-        <Route path="/newdish">
-          <NewDish />
-        </Route>
-        <Route path="*">
-          <h1>404 not found :(</h1>
-        </Route>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/menu" element={<Menu/>} />
+        <Route path="/newdish" element={<NewDish/>} />
+        <Route path="*" element={<h1>404 not found :(</h1>} />
       </Routes>
     </div>
   );
