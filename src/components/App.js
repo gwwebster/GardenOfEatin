@@ -1,32 +1,24 @@
 import React from 'react';
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import NavBar from './NavBar';
 import Home from './Home';
 import About from './About';
 import Menu from "./Menu";
+import NewDish from "./NewDish";
 import logo from "../logo.jpg"
 
 /*
 Component hierarchy
 
-└── App
+└── App (dish state lives here)
     ├── NavBar (React Router)
     ├── Home
     ├── About
+    ├── NewDish (need to update state after POST)
     └── Menu
-        ├── Dish
-        └── NewDish (need to update state after POST)
+        └── Dish 
 
-Fetch
-  POST in NewDish
-  GET (useEffect) in 
-
-State
-(in Menu)
-  fetch menu data
-  use to render each dish in Dish
-
-(in NewDish)
+(state in NewDish)
   formData
     dishName
     ingredients
@@ -34,26 +26,41 @@ State
 
 STEPS:
 [X] Build out db.json
+[ ] Connect components w/ React Router
 [ ] Build skeletons for each component
 [ ] Build state 
 [ ] Fetch (GET) data 
 [ ] Build controlled form
-[ ] Connect components w/ React Router
 [ ] Style
 new titles for each new page - review custom components lesson
 
 */
 
+{/* <h1>Garden of Eatin</h1>
+<img src={logo} />  */}
+
 function App() {
   return (
     <div className="App">
       <title>Garden of Eatin</title>
-      <header className="logo">Garden of Eatin</header>
-      <img src={logo} />
       <NavBar />
-      <Home />
-      <About />
-      <Menu />
+      <Routes>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/menu">
+          <Menu />
+        </Route>
+        <Route path="/newdish">
+          <NewDish />
+        </Route>
+        <Route path="*">
+          <h1>404 not found :(</h1>
+        </Route>
+      </Routes>
     </div>
   );
 }
