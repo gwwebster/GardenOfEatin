@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function NewDish() {
+function NewDish({ onAddDish }) {
 
     const [formData, setFormData] = useState({
         name: "",
@@ -11,8 +11,15 @@ function NewDish() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        // POST fetch
-        // callback to set state in Menu
+        fetch('http://localhost:4000/dishes', {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData)
+        })
+          .then(r => r.json())
+          .then(data => console.log(data))
     }
 
     function handleChange(e) {
@@ -23,7 +30,6 @@ function NewDish() {
             ...formData,
             [formObjKey]: value
         });
-        console.log(formData)
     }
 
     return (
@@ -32,16 +38,17 @@ function NewDish() {
             <p>Got an idea for a new dish? We'd love to hear it!
                 Submit your idea for a new dish and see it added to the <Link to="/menu">Menu</Link> page!</p>
             <form onSubmit={handleSubmit} >
-                <label>Dish Name: <input 
+                <label>Dish Name: <br /></label>
+                <input 
                     type="text" 
                     placeholder="Dish Name"
                     name="name" 
                     value={formData.name} 
                     onChange={handleChange} 
-                /></label>
-                <br />
-                <br />
-                <label>Description: <textarea
+                />
+                <br /><br />
+                <label>Description: <br /></label>
+                <textarea
                     rows="4"
                     cols="50" 
                     type="text" 
@@ -49,18 +56,17 @@ function NewDish() {
                     name="description" 
                     value={formData.description} 
                     onChange={handleChange}
-                /></label>
-                <br />
-                <br />
-                <label>Price: <input 
+                />
+                <br /><br />
+                <label>Price: <br /></label>
+                <input 
                     type="number" 
-                    placeholder="Price"
+                    placeholder="Price (number)"
                     name="price"  
                     value={formData.price} 
                     onChange={handleChange}
-                /></label>                
-                <br />
-                <br />
+                />                
+                <br /><br />
                 <input type ="submit" value="Submit!" />
             </form>
         </div>

@@ -55,7 +55,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/menu" element={<Menu dishes={dishes} />} />
-        <Route path="/newdish" element={<NewDish/>} />
+        <Route path="/newdish" element={<NewDish onAddDish={handleNewDish} />} />
         <Route path="*" element={<h1>404 not found :(</h1>} />
       </Routes>
     </div>
