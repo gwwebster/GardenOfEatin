@@ -4,12 +4,19 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
 
     return (
-        <nav>
-            <NavLink end to="/">Home</NavLink>
-            <NavLink end to="/about">About</NavLink>
-            <NavLink end to="/menu">Menu</NavLink>
-            <NavLink end to="/newdish">New Dish</NavLink>
-        </nav>
+        <div>
+            <nav>
+                <NavLink end to="/">Home</NavLink>
+                <br />
+                <NavLink end to="/about">About</NavLink>
+                <br />
+                <NavLink end to="/menu">Menu</NavLink>
+                <br />
+                <NavLink end to="/newdish">New Dish</NavLink>
+            </nav>
+            <h1 id="navbar-logo">Garden of Eatin Restaurant</h1>
+        </div>
+        
     );
 }
 

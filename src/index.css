@@ -3,6 +3,7 @@
   color: rgb(174, 41, 0);
   font-weight: bold;
   font-family: 'Arial', 'sans-serif';
+  justify-content: center;
 }
 
 body {
@@ -14,6 +15,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  font-size: 2.5em;
+  font-style: italic;
+  font-family: Apple Chancery, cursive;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -21,7 +36,16 @@ code {
 
 a {
   text-decoration: none;
+  /* display: flex; */
   
+}
+
+nav {
+  font-size: 1.2em;
+}
+
+nav, br {
+  line-height: 2em;
 }
 
 ul {
