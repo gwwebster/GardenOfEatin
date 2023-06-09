@@ -20,6 +20,11 @@ function NewDish({ onAddDish }) {
         })
           .then(r => r.json())
           .then(data => onAddDish(data))
+          setFormData({
+            name: "",
+            description: "",
+            price: "",
+        })
     }
 
     function handleChange(e) {
@@ -58,7 +63,7 @@ function NewDish({ onAddDish }) {
                     onChange={handleChange}
                 />
                 <br /><br />
-                <label>Price: <br /></label>
+                <label>Price ($): <br /></label>
                 <input 
                     type="number" 
                     placeholder="Price (number)"
