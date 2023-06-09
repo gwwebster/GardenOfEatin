@@ -67,8 +67,8 @@ function NewDish({ onAddDish }) {
                     onChange={handleChange}
                 />
                 <br /><br />
-                <label>Price ($): <br /></label>
-                <input 
+                <label>Price: <br /></label>
+                $ <input 
                     type="number" 
                     placeholder="Price (number)"
                     name="price"  
