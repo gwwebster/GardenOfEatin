@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route } from "react-router-dom";
 import NavBar from './NavBar';
 import Home from './Home';
 import About from './About';
 import Menu from "./Menu";
 import NewDish from "./NewDish";
-import logo from "../logo.jpg"
 
 /*
 Component hierarchy
@@ -26,20 +25,28 @@ Component hierarchy
 
 STEPS:
 [X] Build out db.json
-[ ] Connect components w/ React Router
+[X] Connect components w/ React Router
 [ ] Build skeletons for each component
 [ ] Build state 
 [ ] Fetch (GET) data 
 [ ] Build controlled form
 [ ] Style
+
 new titles for each new page - review custom components lesson
 
 */
 
-{/* <h1>Garden of Eatin</h1>
-<img src={logo} />  */}
-
 function App() {
+
+  const [dishes, setDishes] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:4000/dishes')
+      .then(r => r.json())
+      .then(data => setDishes(data))
+
+  }, []);
+
   return (
     <div className="App">
       <title>Garden of Eatin</title>
@@ -47,7 +54,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
-        <Route path="/menu" element={<Menu/>} />
+        <Route path="/menu" element={<Menu dishes={dishes} />} />
         <Route path="/newdish" element={<NewDish/>} />
         <Route path="*" element={<h1>404 not found :(</h1>} />
       </Routes>

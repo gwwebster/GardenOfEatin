@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function About() {
     return (
@@ -9,7 +10,7 @@ function About() {
                 made with only the freshest ingredients. 
 
                 While our menu is tried-and-true, we're always open to suggestions! 
-                Please feel free to submit a new dish using the form on the Menu page.
+                Please feel free to submit a new dish using the form on the <Link to="/newdish">New Dish</Link> page!
                 <br />
                 <br />
                 <em>We can't get you to paradise, we can take your taste buds there.</em>
