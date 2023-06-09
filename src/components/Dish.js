@@ -6,7 +6,7 @@ function Dish({ dish }) {
 
     return (
         <li className="dish">
-            <p><strong>{name}</strong> • {price}</p>
+            <p><strong>{name}</strong> • ${price}</p>
             <p><em>{description}</em></p>
             <br />
         </li>

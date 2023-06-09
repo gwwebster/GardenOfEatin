@@ -10,13 +10,19 @@ function NewDish() {
     });
 
     function handleSubmit(e) {
-        e.preventDefault()
+        e.preventDefault();
         // POST fetch
         // callback to set state in Menu
     }
 
-    function handleChange() {
+    function handleChange(e) {
+        const formObjKey = e.target.name
+        const value = e.target.value
 
+        setFormData({
+            ...formData,
+            [formObjKey]: value
+        });
     }
 
     return (
@@ -27,7 +33,8 @@ function NewDish() {
             <form onSubmit={handleSubmit} >
                 <label>Dish Name: <input 
                     type="text" 
-                    placeholder="Dish Name" 
+                    placeholder="Dish Name"
+                    name="name" 
                     value={formData.name} 
                     onChange={handleChange} 
                 /></label>
@@ -35,20 +42,23 @@ function NewDish() {
                 <br />
                 <label>Description: <input 
                     type="text" 
-                    placeholder="Description" 
+                    placeholder="Description"
+                    name="description" 
                     value={formData.description} 
-                    onChange={handleChange} /></label>
+                    onChange={handleChange}
+                /></label>
                 <br />
                 <br />
                 <label>Price: <input 
                     type="text" 
-                    placeholder="Price" 
+                    placeholder="Price"
+                    name="price"  
                     value={formData.price} 
                     onChange={handleChange}
                 /></label>                
                 <br />
                 <br />
-                <button>Submit!</button>
+                <input type ="submit" value="Submit!" />
             </form>
         </div>
     );
