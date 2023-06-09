@@ -47,6 +47,11 @@ function App() {
 
   }, []);
 
+  function handleNewDish(newDish) {
+    const newDishes = [...dishes, newDish]
+    setDishes(newDishes);
+  }
+
   return (
     <div className="App">
       <title>Garden of Eatin</title>

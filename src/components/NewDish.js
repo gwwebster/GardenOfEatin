@@ -19,7 +19,7 @@ function NewDish({ onAddDish }) {
           body: JSON.stringify(formData)
         })
           .then(r => r.json())
-          .then(data => console.log(data))
+          .then(data => onAddDish(data))
     }
 
     function handleChange(e) {
