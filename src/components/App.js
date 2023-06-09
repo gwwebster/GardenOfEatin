@@ -9,30 +9,22 @@ import NewDish from "./NewDish";
 /*
 Component hierarchy
 
-└── App (dish state lives here)
-    ├── NavBar (React Router)
+└── Ap
+    ├── NavBar
     ├── Home
     ├── About
-    ├── NewDish (need to update state after POST)
+    ├── NewDish
     └── Menu
         └── Dish 
-
-(state in NewDish)
-  formData
-    dishName
-    ingredients
-    price
 
 STEPS:
 [X] Build out db.json
 [X] Connect components w/ React Router
-[ ] Build skeletons for each component
-[ ] Build state 
-[ ] Fetch (GET) data 
-[ ] Build controlled form
+[X] Build skeletons for each component
+[X] Build state 
+[X] Fetch (GET) data 
+[X] Build controlled form
 [ ] Style
-
-new titles for each new page - review custom components lesson
 
 */
 

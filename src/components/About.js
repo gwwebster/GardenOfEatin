@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function About() {
+
+
+    useEffect(() => {
+        document.title = "Garden of Eatin | About"
+    }, []);
+
     return (
         <div id="about">
             <h2>Welcome!</h2>

@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function NewDish({ onAddDish }) {
+
+    useEffect(() => {
+        document.title = "Garden of Eatin | New Dish"
+    }, []);
 
     const [formData, setFormData] = useState({
         name: "",
