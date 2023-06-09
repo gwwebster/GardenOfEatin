@@ -23,6 +23,7 @@ function NewDish() {
             ...formData,
             [formObjKey]: value
         });
+        console.log(formData)
     }
 
     return (
@@ -40,7 +41,9 @@ function NewDish() {
                 /></label>
                 <br />
                 <br />
-                <label>Description: <input 
+                <label>Description: <textarea
+                    rows="4"
+                    cols="50" 
                     type="text" 
                     placeholder="Description"
                     name="description" 
@@ -50,7 +53,7 @@ function NewDish() {
                 <br />
                 <br />
                 <label>Price: <input 
-                    type="text" 
+                    type="number" 
                     placeholder="Price"
                     name="price"  
                     value={formData.price} 
