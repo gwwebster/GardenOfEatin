@@ -5,7 +5,7 @@ function Menu({ dishes }) {
 
     const dishesToDisplay = dishes.map(dish => {
         return <Dish key={dish.id} dish={dish} />
-    })
+    });
 
     return (
         <div id="menu">
