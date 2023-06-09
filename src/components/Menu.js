@@ -4,7 +4,7 @@ import Dish from './Dish';
 function Menu({ dishes }) {
 
     const dishesToDisplay = dishes.map(dish => {
-        return <Dish dish={dish} />
+        return <Dish key={dish.id} dish={dish} />
     })
 
     return (
