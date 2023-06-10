@@ -5,7 +5,7 @@ function Dish({ dish }) {
     const { name, description, price } = dish
 
     return (
-        <li className="dish">
+        <li>
             <p><span className="dish_name">{name}</span> • ${price}</p>
             <p><em>{description}</em></p>
             <br />

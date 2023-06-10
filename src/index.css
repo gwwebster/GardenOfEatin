@@ -89,3 +89,39 @@ ul {
   font-weight: bold;
   font-size: 22px;
 }
+
+#form_page {
+  margin-top: 10%;
+  text-align: center;
+  font-size: 19px;
+}
+
+#form_page h3 {
+  font-size: 25px;
+}
+
+input[type=text] {
+  width: 18%;
+  margin: 8px 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input, textarea {
+  padding: 10px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  resize: none;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border: 2px solid #555;
+}
+
+input[type=submit] {
+  color: rgb(179, 229, 237);
+  background-color: rgb(174, 41, 0);
+  opacity: 0.95;
+  width: 7%;
+}
