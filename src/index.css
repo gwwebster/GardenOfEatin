@@ -28,11 +28,6 @@ p {
   font-size: 1.2em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 a {
   text-decoration: none; 
 }
@@ -42,25 +37,33 @@ nav {
   margin-left: 5%;
   width: 10%;
   margin-top: 1%;
-  background-color: black;
+  padding: 10px 15px;
+  width: 25%;
 }
 
 nav, br {
   line-height: 2.2em;
 }
 
+#logo_container {
+  display: flex;
+  opacity: 0.9;
+  margin-top: 8%;
+  margin-left: 25%;
+  margin-right: 25%; 
+}
+
 ul {
   list-style-type: none;
 }
 
-#navbar-logo {
+#name {
   text-align: right;
   margin-right: 5%;
   margin-top: -13%;
 }
 
 .active {
-  /* background-color: rgb(250, 196, 19, 0.8); */
   font-weight: bolder;
   font-size: 25px;
 }

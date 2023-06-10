@@ -9,7 +9,7 @@ import NewDish from "./NewDish";
 /*
 Component hierarchy
 
-└── Ap
+└── App
     ├── NavBar
     ├── Home
     ├── About

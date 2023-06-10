@@ -8,8 +8,7 @@ function Home() {
     }, []);
 
     return (
-        <div id="home">
-            {/* <h1>Garden of Eatin Restaurant</h1> */}
+        <div id="logo_container">
             <img src={logo} alt="Restaurant Logo" />
         </div>
     );
