@@ -19,8 +19,8 @@ function About() {
                 While our menu is tried-and-true, we're always open to suggestions! 
                 Please feel free to submit a new dish using the form on the <Link to="/newdish">New Dish</Link> page!
             </p><br />
-            <p><em>We can't get you to paradise, we can take your taste buds there.</em></p>
-            <p><br />
+            <p id="slogan">We can't get you to paradise, we can take your taste buds there.</p>
+            <p>
                 Hope to see you soon!
             </p>
         </div>
