@@ -8,7 +8,6 @@ import NewDish from "./NewDish";
 
 /*
 Component hierarchy
-
 └── App
     ├── NavBar
     ├── Home
@@ -16,16 +15,6 @@ Component hierarchy
     ├── NewDish
     └── Menu
         └── Dish 
-
-STEPS:
-[X] Build out db.json
-[X] Connect components w/ React Router
-[X] Build skeletons for each component
-[X] Build state 
-[X] Fetch (GET) data 
-[X] Build controlled form
-[ ] Style
-
 */
 
 function App() {
