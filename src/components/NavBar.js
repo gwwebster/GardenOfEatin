@@ -14,7 +14,7 @@ function NavBar() {
                 <br />
                 <NavLink end to="/newdish">New Dish</NavLink>
             </nav>
-            <h1 id="navbar-logo">Garden of Eatin Restaurant</h1>
+            <h1 id="navbar-logo">Garden of Eatin</h1>
         </div>
         
     );

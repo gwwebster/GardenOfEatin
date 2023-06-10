@@ -39,9 +39,9 @@ a {
 
 nav {
   font-size: 21px;
-  margin-left: 3%;
+  margin-left: 5%;
   width: 10%;
-  margin-top: 5px;
+  margin-top: 1%;
   background-color: black;
 }
 
@@ -55,7 +55,7 @@ ul {
 
 #navbar-logo {
   text-align: right;
-  margin-right: 3%;
+  margin-right: 5%;
   margin-top: -13%;
 }
 
@@ -77,4 +77,15 @@ ul {
 #slogan {
   font-style: italic;
   font-weight: 600;
+}
+
+#menu {
+  display: flex;
+  text-align: center;
+  margin-top: 7%;
+}
+
+.dish_name {
+  font-weight: bold;
+  font-size: 22px;
 }
