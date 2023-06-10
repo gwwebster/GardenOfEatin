@@ -15,20 +15,24 @@ function NewDish({ onAddDish }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch('http://localhost:4000/dishes', {
-          method: 'POST',
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData)
-        })
-          .then(r => r.json())
-          .then(data => onAddDish(data))
-          setFormData({
-            name: "",
-            description: "",
-            price: "",
-        })
+        if (formData.name.length > 3 && formData.description.length > 5 && formData.price.length > 0) {
+            fetch('http://localhost:4000/dishes', {
+                method: 'POST',
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+              })
+                .then(r => r.json())
+                .then(data => onAddDish(data))
+                setFormData({
+                  name: "",
+                  description: "",
+                  price: "",
+              });
+        } else {
+            alert("Please enter more information on the dish you would like to add.")
+        };
     }
 
     function handleChange(e) {
