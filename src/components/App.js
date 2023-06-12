@@ -42,7 +42,7 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/menu" element={<Menu dishes={dishes} />} />
         <Route path="/newdish" element={<NewDish onAddDish={handleNewDish} />} />
-        <Route path="*" element={<h1>404 not found :(</h1>} />
+        <Route path="*" element={<h1 className="error-page">404 not found :(</h1>} />
       </Routes>
     </div>
   );
