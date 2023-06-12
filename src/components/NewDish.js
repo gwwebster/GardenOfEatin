@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function NewDish({ onAddDish }) {
 
@@ -13,9 +13,11 @@ function NewDish({ onAddDish }) {
         price: "",
     });
 
+    const navigate = useNavigate();
+
     function handleSubmit(e) {
         e.preventDefault();
-        if (formData.name.length > 3 && formData.description.length > 5 && formData.price.length > 0) {
+        if (formData.name.length > 3 && formData.description.length > 3 && formData.price.length > 0) {
             fetch('http://localhost:4000/dishes', {
                 method: 'POST',
                 headers: {
@@ -30,7 +32,8 @@ function NewDish({ onAddDish }) {
                   description: "",
                   price: "",
               });
-              alert("New dish added!")
+              alert("Your dish was added to the Menu, check it out!")
+            navigate("/menu")
         } else {
             alert("Please enter more information on the dish you would like to add.")
         };
