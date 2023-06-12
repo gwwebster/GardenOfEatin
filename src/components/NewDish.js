@@ -30,6 +30,7 @@ function NewDish({ onAddDish }) {
                   description: "",
                   price: "",
               });
+              alert("New dish added!")
         } else {
             alert("Please enter more information on the dish you would like to add.")
         };
