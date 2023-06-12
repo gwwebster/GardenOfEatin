@@ -49,7 +49,7 @@ function NewDish({ onAddDish }) {
         <div id="form_page">
             <h3>Add a new dish!</h3>
             <p>Got an idea for a new dish? We'd love to hear it!
-            <br />Submit your idea for a new dish and see it added to the <Link to="/menu">Menu</Link> page!</p>
+            <br />Submit your idea and see it added to the <Link className="inline-link" to="/menu" >Menu</Link> page!</p>
             <br />
             <form onSubmit={handleSubmit} >
                 <label>Dish Name: <br /></label>

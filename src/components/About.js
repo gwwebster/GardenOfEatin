@@ -20,9 +20,7 @@ function About() {
                 Please feel free to submit a new dish using the form on the <Link to="/newdish">New Dish</Link> page!
             </p><br />
             <p id="slogan">We can't get you to paradise, we can take your taste buds there.</p>
-            <p>
-                Hope to see you soon!
-            </p>
+            <p>Hope to see you soon!</p>
         </div>
     );
 }
