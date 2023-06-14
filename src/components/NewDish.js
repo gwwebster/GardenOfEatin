@@ -56,7 +56,7 @@ function NewDish({ onAddDish }) {
             <br />Submit your idea and see it added to the <Link className="inline-link" to="/menu" >Menu</Link> page!</p>
             <br />
             <form onSubmit={handleSubmit} >
-                <label>Dish Name: <br /></label>
+                <label htmlFor="name">Dish Name: <br /></label>
                 <input 
                     type="text" 
                     placeholder="Dish Name"
@@ -65,7 +65,7 @@ function NewDish({ onAddDish }) {
                     onChange={handleChange} 
                 />
                 <br /><br />
-                <label>Description: <br /></label>
+                <label htmlFor="description">Description: <br /></label>
                 <textarea
                     rows="4"
                     cols="50" 
@@ -76,7 +76,7 @@ function NewDish({ onAddDish }) {
                     onChange={handleChange}
                 />
                 <br /><br />
-                <label>Price: <br /></label>
+                <label htmlFor="price">Price: <br /></label>
                 $ <input 
                     type="number" 
                     placeholder="(number)"
