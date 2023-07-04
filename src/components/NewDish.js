@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 function NewDish({ onAddDish }) {
@@ -17,35 +17,34 @@ function NewDish({ onAddDish }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        if (formData.name.length > 3 && formData.description.length > 3 && formData.price.length > 0) {
+        if (formData.name.length > 3 && formData.description.length > 3 && formData.price > 0) {
             fetch('http://localhost:4000/dishes', {
                 method: 'POST',
                 headers: {
-                  "Content-Type": "application/json",
+                  "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData)
               })
                 .then(r => r.json())
-                .then(data => onAddDish(data))
-                setFormData({
-                  name: "",
-                  description: "",
-                  price: "",
-              });
-              alert("Your dish was added to the Menu, check it out!")
-            navigate("/menu")
+                .then(data => {
+                    onAddDish(data)
+                    setFormData({
+                        name: "",
+                        description: "",
+                        price: "",
+                    })
+                    alert("Your dish was added to the Menu, check it out!")
+                    navigate("/menu")
+                });
         } else {
             alert("Please enter more information on the dish you would like to add.")
         };
     }
 
     function handleChange(e) {
-        const formObjKey = e.target.name
-        const value = e.target.value
-
         setFormData({
             ...formData,
-            [formObjKey]: value
+            [e.target.name]: e.target.value
         });
     }
 
@@ -53,7 +52,7 @@ function NewDish({ onAddDish }) {
         <div id="form_page">
             <h3>Add a new dish!</h3>
             <p>Got an idea for a new dish? We'd love to hear it!
-            <br />Submit your idea and see it added to the <Link className="inline-link" to="/menu" >Menu</Link> page!</p>
+            <br />Submit your idea and see it added to the <Link className="inline-link" to="/menu">Menu</Link> page!</p>
             <br />
             <form onSubmit={handleSubmit} >
                 <label htmlFor="name">Dish Name: <br /></label>
@@ -63,8 +62,7 @@ function NewDish({ onAddDish }) {
                     name="name" 
                     value={formData.name} 
                     onChange={handleChange} 
-                />
-                <br /><br />
+                /><br /><br />
                 <label htmlFor="description">Description: <br /></label>
                 <textarea
                     rows="4"
@@ -74,8 +72,7 @@ function NewDish({ onAddDish }) {
                     name="description" 
                     value={formData.description} 
                     onChange={handleChange}
-                />
-                <br /><br />
+                /><br /><br />
                 <label htmlFor="price">Price: <br /></label>
                 $ <input 
                     type="number" 
@@ -83,8 +80,7 @@ function NewDish({ onAddDish }) {
                     name="price"  
                     value={formData.price} 
                     onChange={handleChange}
-                />             
-                <br /><br />
+                /><br /><br />
                 <input type="submit" value="Submit!" />
             </form>
         </div>

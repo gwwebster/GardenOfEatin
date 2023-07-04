@@ -2,7 +2,7 @@ import React from 'react';
 
 function Dish({ dish }) {
 
-    const { name, description, price } = dish
+    const { name, description, price } = dish;
 
     return (
         <li>
